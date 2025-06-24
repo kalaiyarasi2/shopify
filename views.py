@@ -1,30 +1,31 @@
-from django.shortcuts import render
 
-# Create your views here.
-# accounts/views.py
-from django.shortcuts import render, redirect
-from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
+# orders/views.py
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.http import HttpResponse
 
-def register(request):
-    """User registration view"""
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, 'Registration successful!')
-            return redirect('store:home')
-    else:
-        form = UserCreationForm()
-    
-    context = {'form': form}
-    return render(request, 'accounts/register.html', context)
+def order_create(request):
+    """Create a new order"""
+    # This is a placeholder - you'll need to implement order creation logic
+    context = {}
+    return render(request, 'orders/order_create.html', context)
+
+def order_success(request, order_id):
+    """Order success page"""
+    context = {'order_id': order_id}
+    return render(request, 'orders/order_success.html', context)
 
 @login_required
-def profile(request):
-    """User profile view"""
+def order_history(request):
+    """Display user's order history"""
+    # This is a placeholder - you'll need to implement order history logic
     context = {}
-    return render(request, 'accounts/profile.html', context)
+    return render(request, 'orders/order_history.html', context)
+
+@login_required
+def order_detail(request, order_id):
+    """Display order details"""
+    # This is a placeholder - you'll need to implement order detail logic
+    context = {'order_id': order_id}
+    return render(request, 'orders/order_detail.html', context)
