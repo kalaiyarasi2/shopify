@@ -1,0 +1,58 @@
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial {
+    border-left: 4px solid #007bff;
+    padding-left: 1rem;
+}
+
+.product-image {
+    height: 200px;
+    object-fit: cover;
+}
+
+.cart-item-image {
+    height: 80px;
+    object-fit: cover;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.alert {
+    border-radius: 0.5rem;
+}
+
+footer {
+    margin-top: auto;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
